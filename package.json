@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "script": "cypress run",
+    "script": "cypress run --headed",
     "test": "npm run script "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.4.0"
+    "cypress": "^13.4.0",
+    "multiple-cucumber-html-reporter": "^3.5.0"
   },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^19.0.0",
@@ -20,6 +21,15 @@
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": "cypress/step_defination/*.js",
     "filterSpecs": true,
-    "omitFiltered": true
+    "omitFiltered": true,
+    "html": {
+      "enabled": true
+    },
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
   }
 }
